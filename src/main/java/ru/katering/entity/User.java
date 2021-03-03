@@ -1,4 +1,4 @@
-package entity;
+package ru.katering.entity;
 
 public class User {
     private String login;
