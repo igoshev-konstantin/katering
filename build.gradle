@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.9.RELEASE")  // spring boot gradle plugin will used for generate jar
+    }
+}
+
 plugins {
     id 'java'
 }
@@ -15,4 +24,40 @@ dependencies {
     /*testCompile group: 'junit', name: 'junit', version: '4.12'*/
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen
     compileOnly group: 'org.hibernate', name: 'hibernate-jpamodelgen', version: '5.4.28.Final'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.4.3'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.3'
+
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.19'
+
+    compile("org.springframework.boot:spring-boot-starter-web")     // web application
 }
+
+
+
+/*
+plugins {
+    id 'java'
+}
+
+group 'ru.katering'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    */
+/*testCompile group: 'junit', name: 'junit', version: '4.12'*//*
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen
+    compileOnly group: 'org.hibernate', name: 'hibernate-jpamodelgen', version: '5.4.28.Final'
+}
+*/
