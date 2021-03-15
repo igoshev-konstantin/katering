@@ -1,0 +1,11 @@
+#Directional
+#1 OneToMany
+https://www.baeldung.com/hibernate-one-to-many
+
+#2 ManyToMany
+https://www.baeldung.com/hibernate-many-to-many
+
+#Composite keys
+#1
+https://www.baeldung.com/jpa-embedded-embeddable
+

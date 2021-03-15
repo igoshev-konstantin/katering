@@ -12,7 +12,7 @@ public class User {
     private int id;
     @Column(name = "login")
     private String login;
-    @Column(name = "psw")
+    @Column(name = "password")
     private String psw;
     @Column(name = "name")
     private String name;

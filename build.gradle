@@ -1,15 +1,7 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.9.RELEASE")  // spring boot gradle plugin will used for generate jar
-    }
-}
 
 plugins {
     id 'java'
-    id "org.flywaydb.flyway" version "7.5.4"
+    id "org.flywaydb.flyway" version "7.6.0"
 }
 
 group 'ru.katering'
@@ -38,30 +30,6 @@ dependencies {
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.19'
 
-    compile("org.springframework.boot:spring-boot-starter-web")
+    compile group: 'org.flywaydb', name: 'flyway-core', version: '7.6.0'
+
 }
-
-
-
-/*
-plugins {
-    id 'java'
-}
-
-group 'ru.katering'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    */
-/*testCompile group: 'junit', name: 'junit', version: '4.12'*//*
-
-    // https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen
-    compileOnly group: 'org.hibernate', name: 'hibernate-jpamodelgen', version: '5.4.28.Final'
-}
-*/

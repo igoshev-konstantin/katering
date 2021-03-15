@@ -1,16 +1,35 @@
 package ru.katering.entity;
 
-import java.util.List;
+import ru.katering.entity.enums.CookType;
 
-public class Cook extends User{
+import javax.persistence.*;
 
-    private enum CookType{CONFECTIONER, FISHCOOK, MEATCOOK}
+@Entity
+@Table(name = "Cook")
+public class Cook{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
+    @Column(name = "startSalary")
     private double startSalary;
-    private List<Review> reviewList;
+    @Column(name = "cookType")
+    @Enumerated(EnumType.STRING)/*EnumType.STRING хранится имя этого enum/EnumType.ORDINAL хранится ID этого enum*/
+    private CookType cookType;
+    //private List<Review> reviewList; //Зачем в UML это поле, ведь можно review посмотреть из Order'а
 
-    public void createDish(){}
-    public void editDish(){}
-    public void removeDish(){}
+    public void createDish() {
+    }
+
+    public void editDish() {
+    }
+
+    public void removeDish() {
+    }
 
     public Cook() {
     }
@@ -23,11 +42,4 @@ public class Cook extends User{
         this.startSalary = startSalary;
     }
 
-    public List<Review> getReviewList() {
-        return reviewList;
-    }
-
-    public void setReviewList(List<Review> reviewList) {
-        this.reviewList = reviewList;
-    }
 }
