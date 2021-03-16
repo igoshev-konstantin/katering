@@ -11,16 +11,20 @@ public class Order_Cart_Dish {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
+
     @Embedded
     private ShoppingCart shoppingCart;
+
     @ManyToOne
     @JoinColumn(name = "order_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     /*insertable = false, updatable = false - You would do that when the responsibility of creating/updating the
     referenced column isn't in the current entity, but in another entity.*/
     private Order order;
+
     @ManyToOne
     @JoinColumn(name = "dish_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     private Dish dish;
+
     @Column(name = "count")
     private int count;
 

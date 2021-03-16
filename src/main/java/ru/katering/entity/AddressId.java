@@ -11,14 +11,4 @@ public class AddressId implements Serializable {
     private String flat;
     private String index;
 
-    public AddressId(String region, String city, String street, String flat, String index) {
-        this.region = region;
-        this.city = city;
-        this.street = street;
-        this.flat = flat;
-        this.index = index;
-    }
-
-    public AddressId() {
-    }
 }
