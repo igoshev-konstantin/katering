@@ -1,6 +1,6 @@
 create table if not exists public."User"
 (
-    id    integer not null
+    id    bigint not null
         constraint "User_pkey"
             primary key,
     login text    not null,

@@ -1,9 +1,9 @@
 create table if not exists public."Admin"
 (
-    id    integer not null
+    id    bigint not null
         constraint "Admin_pkey"
             primary key,
-    user_id integer    not null
+    user_id bigint    not null
         constraint user_id
             references public."Admin"
 );

@@ -1,9 +1,9 @@
 create table if not exists public."Cook"
 (
-    id    integer not null
+    id    bigint not null
         constraint "Cook_pkey"
             primary key,
-    user_id integer    not null
+    user_id bigint    not null
         constraint user_id
             references public."Cook",
     startSalary double precision,
