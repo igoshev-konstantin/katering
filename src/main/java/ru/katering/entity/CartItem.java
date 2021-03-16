@@ -1,8 +1,6 @@
 package ru.katering.entity;
 
-
 import lombok.*;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
