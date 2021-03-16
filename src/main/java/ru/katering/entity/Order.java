@@ -3,6 +3,7 @@ package ru.katering.entity;
 import ru.katering.entity.enums.OrderStatus;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
@@ -29,13 +30,6 @@ public class Order {
     @Enumerated(EnumType.STRING)/*EnumType.STRING хранится имя этого enum/EnumType.ORDINAL хранится ID этого enum*/
     private OrderStatus orderStatus;
 
-    @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "dish", column = @Column(name = "cartDish")),
-            @AttributeOverride(name = "count", column = @Column(name = "cartCount"))
-    })
-    private ShoppingCart shoppingCart;
-
     public double calculateCost() {
         return 0;
     }
@@ -45,6 +39,9 @@ public class Order {
 
     public void cancelOrder() {
     }
+
+
+
 
 
 }
