@@ -1,11 +1,19 @@
 package ru.katering.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import ru.katering.entity.enums.OrderStatus;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Order")
 public class Order {
@@ -35,6 +43,9 @@ public class Order {
     @Column(name = "orderStatus")
     @Enumerated(EnumType.STRING)/*EnumType.STRING хранится имя этого enum/EnumType.ORDINAL хранится ID этого enum*/
     private OrderStatus orderStatus;
+
+    @OneToMany(mappedBy = "order")
+    private Set<CartItem> cartItems;
 
 //    public double calculateCost() {
 //        return 0;
