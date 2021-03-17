@@ -36,14 +36,14 @@ public class Order {
     @Enumerated(EnumType.STRING)/*EnumType.STRING хранится имя этого enum/EnumType.ORDINAL хранится ID этого enum*/
     private OrderStatus orderStatus;
 
-    public double calculateCost() {
-        return 0;
-    }
-
-    public void setReview() {
-    }
-
-    public void cancelOrder() {
-    }
+//    public double calculateCost() {
+//        return 0;
+//    }
+//
+//    public void setReview() {
+//    }
+//
+//    public void cancelOrder() {
+//    }
 
 }

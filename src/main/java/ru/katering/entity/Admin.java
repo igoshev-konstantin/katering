@@ -16,18 +16,18 @@ public class Admin {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public List<Order> getCurrentOrders() {
-        return null;
-    }
-
-    public Order getOrderInfo() {
-        return null;
-    }
-
-    public void removeCook() {
-    }
-
-    public void editCook() {
-    }
+//    public List<Order> getCurrentOrders() {
+//        return null;
+//    }
+//
+//    public Order getOrderInfo() {
+//        return null;
+//    }
+//
+//    public void removeCook() {
+//    }
+//
+//    public void editCook() {
+//    }
 
 }
