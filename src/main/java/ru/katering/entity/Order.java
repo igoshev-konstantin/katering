@@ -20,14 +20,21 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "orderNumber")
     private short orderNumber;
 
-    //    @Column("address")
-    private String address;//Вынести в отдельный класс
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "region", column = @Column(name = "adrRegion")),
+            @AttributeOverride(name = "city", column = @Column(name = "adrCity")),
+            @AttributeOverride(name = "street", column = @Column(name = "adrStreet")),
+            @AttributeOverride(name = "flat", column = @Column(name = "adrFlat")),
+            @AttributeOverride(name = "index", column = @Column(name = "adrIndex"))
+    })
+    private Address address;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id")
@@ -47,14 +54,5 @@ public class Order {
     @OneToMany(mappedBy = "order")
     private Set<CartItem> cartItems;
 
-//    public double calculateCost() {
-//        return 0;
-//    }
-//
-//    public void setReview() {
-//    }
-//
-//    public void cancelOrder() {
-//    }
 
 }

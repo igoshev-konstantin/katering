@@ -23,12 +23,5 @@ public class Customer {
             mappedBy = "customer", fetch = FetchType.EAGER)
     private List<Order> orderList;
 
-//    public void depositMoney() {
-//    }
-//
-//    public void withdrawMoney() {
-//    }
-//
-//    public void makeOrder() {
-//    }
+
 }
