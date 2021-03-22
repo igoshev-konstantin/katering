@@ -58,5 +58,16 @@ create table if not exists public."Order"
     cook_id     bigint not null
         references public."Cook" (id),
     customer_id bigint not null
-        references public."Cook" (id)
+        references public."Customer" (id)
+);
+
+create table if not exists public."CartItem"
+(
+    cartId   bigint not null
+        primary key,
+    order_id bigint not null
+        references public."Order" (id),
+    dish_id  bigint not null
+        references public."Dish" (id),
+    count    bigint not null
 );
