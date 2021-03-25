@@ -1,5 +1,5 @@
 -- DDL
-create table if not exists public."User"
+create table if not exists public."pg_user"
 (
     id       bigint not null
         primary key
@@ -15,7 +15,7 @@ create table if not exists public."Cook"
         primary key
         generated ALWAYS AS IDENTITY,
     user_id     bigint not null
-        references public."User" (id),
+        references public."pg_user" (id),
     startSalary double precision,
     cookType    text   not null
 );
@@ -27,7 +27,7 @@ create table if not exists public."Admin"
         generated ALWAYS AS IDENTITY,
     user_id bigint not null
         constraint id
-            references public."User" (id)
+            references public."pg_user" (id)
 );
 
 create table if not exists public."Customer"
@@ -36,7 +36,7 @@ create table if not exists public."Customer"
         primary key
         generated ALWAYS AS IDENTITY,
     user_id bigint not null
-        references public."User" (id),
+        references public."pg_user" (id),
     wallet  double precision
 );
 
@@ -80,8 +80,4 @@ create table if not exists public."CartItem"
     count    bigint not null
 );
 
--- DML
-INSERT INTO public."User"(login, password, name)
-VALUES (N'admin', N'admin', N'Administrator'),
-       (N'customer1', N'customer1', N'Customer 1'),
-       (N'cook1', N'cook1', N'Cook 1');
+
