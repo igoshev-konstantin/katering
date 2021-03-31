@@ -15,11 +15,10 @@ public class User {
     private String login;
 
     @Column(name = "password")
-    private String psw;
+    private String password;
 
     @Column(name = "name")
     private String name;
-
 
     public Long getId() {
         return id;
@@ -37,12 +36,12 @@ public class User {
         this.login = login;
     }
 
-    public String getPsw() {
-        return psw;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPsw(String psw) {
-        this.psw = psw;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -52,5 +51,4 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-
 }

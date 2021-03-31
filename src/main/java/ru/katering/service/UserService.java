@@ -15,18 +15,31 @@ public class UserService {
     private Convert convert;
     private UserRepository userRepository;
 
-    @Autowired
-    public void setUserRepository(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    /*get all users*/
+    public List<UserDTO> getAllUsers() {
+        List<User> userList = userRepository.findAll();
+        List<UserDTO> userDTOList = convert.listUserToListUserDTO(userList);
+        return userDTOList;
     }
 
-    public List<User> findAllUsers() {
-        return userRepository.findAll();
-    }
-
+    /*get user by id*/
     public UserDTO findUserById(Long id) {
         User user = userRepository.findById(id).orElseThrow(IllegalArgumentException::new);
         return convert.userToUserDTO(user);
+    }
+
+    /*add new user*/
+    public void addNewUser(User user) {
+        userRepository.save(user);
+    }
+
+    /*delete user by id*/
+    public void deleteUserById(Long id) {
+        userRepository.deleteById(id);
+    }
+
+    public boolean checkUserByLogin(String login){
+        return userRepository.getUserByLogin(login)!=null;
     }
 
     @Autowired
@@ -34,4 +47,8 @@ public class UserService {
         this.convert = convert;
     }
 
+    @Autowired
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 }

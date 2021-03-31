@@ -5,4 +5,6 @@ import ru.katering.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
+    User getUserByLogin(String login);
+
 }

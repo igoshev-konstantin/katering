@@ -1,4 +1,5 @@
 package ru.katering;
+
 import org.springframework.boot.SpringApplication;
 
 @org.springframework.boot.autoconfigure.SpringBootApplication
