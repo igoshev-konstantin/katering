@@ -48,6 +48,11 @@ public class UserController {
         return "User with id: " + id + " was deleted";
     }
 
+    @GetMapping(value = "/swagger")
+    public String swaggerUi() {
+        return "redirect:/swagger-ui.html";
+    }
+
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;

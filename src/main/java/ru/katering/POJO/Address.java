@@ -1,4 +1,4 @@
-package ru.katering.entity;
+package ru.katering.POJO;
 
 import javax.persistence.Embeddable;
 
